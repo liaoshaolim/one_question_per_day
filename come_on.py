@@ -11,6 +11,10 @@ def main():
     print(solution.longestCommonPrefix(["flower", "flow", "flight"]))
 
     print('----------------- 2020年09月11日 -----------------')
+    print(solution.intersection([1, 2, 2, 1], [2, 2]))
+    print(solution.intersection_sorted([1, 2, 3, 4, 4, 13], [1, 4, 9, 10]))
+
+    print('----------------- 2020年09月11日 -----------------')
     basic = Basic()
     testArr = [1, 8, 5, 2, 1, 5, 6, 3, 9, 7, 4]
     print(testArr)
