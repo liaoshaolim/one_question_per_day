@@ -44,7 +44,7 @@ class Solution:
                     result.append(item1)
         return result
 
-    # 力扣 349，进阶，两个有序数组的交集
+    # 349.进阶，两个有序数组的交集
     # 双指针解
     def intersection_sorted(self, nums1, nums2):
         result = []
@@ -62,3 +62,23 @@ class Solution:
             elif nums1[i] > nums2[j]:
                 j += 1
         return result
+
+    # 704
+    # 给定一个 n 个元素有序的（升序）整型数组 nums 和一个目标值 target  ，写一个函数搜索 nums 中的 target，如果目标值存在返回下标，否则返回 -1。
+    def binary_search(self, arr, target):
+        ''' 二分查找 '''
+        # 思路：不停的调整搜索区间 + 细节把控
+        left = 0
+        right = len(arr) - 1
+        # DETAIL：这里使用 <= ，因为 right 就是数组末尾下标，这个区间其实就是每次进行搜索的区间
+        while(left <= right):
+            # DETAIL：left + (right - left) / 2 就和 (left + right) / 2 的结果相同，但是有效防止了 left 和 right 太大直接相加导致溢出
+            mid = left + int((right - left) / 2)
+            if(arr[mid] == target):
+                return mid
+            elif(target < arr[mid]):
+                right = mid - 1
+            # DETAIL：不出现 else,因为这样可以清楚地展现所有细节
+            elif(target > arr[mid]):
+                left = mid + 1
+        return -1
