@@ -21,6 +21,9 @@ def main():
     basic.quickSort(testArr, 0, len(testArr) - 1)
     print(testArr)
 
+    print('----------------- 2020年09月16日 -----------------')
+    print(basic.binary_search(testArr, 5))
+
 
 if __name__ == "__main__":
     main()
