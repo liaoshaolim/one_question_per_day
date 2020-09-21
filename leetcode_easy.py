@@ -98,7 +98,7 @@ class Solution:
         return ''
 
     # 88. 合并两个有序数组
-    # 双指针思路
+    # 双指针 思路
     def merge(self, nums1, nums2):
         i = 0
         j = 0
@@ -119,3 +119,19 @@ class Solution:
             result.append(nums2[j])
             j += 1
         return result
+
+    # 20. 有效的括号
+    # 栈 思路
+    def checkValidString(self, s: str) -> bool:
+        stack = []
+        # 字典的的巧妙赋值
+        dic = {')': '(', ']': '[', '}': '{'}
+        for c in s:
+            # 字符不在字典的 key 中时，压栈
+            if c not in dic:
+                stack.append(c)
+            # eg:not [] 返回 true，not [1,2,3] 返回 false
+            # 栈为空（上来就不入栈）或者弹栈元素与新的不匹配
+            elif not stack or dic[c] != stack.pop():
+                return False
+        return True
