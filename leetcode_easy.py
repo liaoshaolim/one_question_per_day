@@ -149,3 +149,21 @@ class Solution:
                 return 0
             y //= 10
         return res if x > 0 else -res
+
+    # 344. 反转字符串
+    def reverseString(self, s):
+        # 先转为字符数组
+        strList = []
+        for c in s:
+            strList.append(c)
+
+        left = 0
+        right = len(strList) - 1
+        while left <= right:
+            temp = strList[left]
+            strList[left] = strList[right]
+            strList[right] = temp
+            left += 1
+            right -= 1
+        # 字符数组转字符串
+        return ''.join(strList)
