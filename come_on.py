@@ -22,6 +22,7 @@ def main():
     print(solution.checkValidString('(){}[]'))
     print(solution.reverse(123))
     print(solution.reverseString('hello'))
+    print(solution.singleNumber([4, 1, 2, 1, 2]))
 
     print('======================================== 基础 ========================================')
     print('----- 2020年09月11日 -----')
