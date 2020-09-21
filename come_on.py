@@ -5,7 +5,7 @@ from basic import Basic
 def main():
     print('come on!')
 
-    print('==================== 力扣 ====================')
+    print('======================================== 力扣 ========================================')
     print('----- 2020年09月09日 -----')
     solution = Solution()
     print(solution.longestCommonPrefix(["flower", "flow", "flight"]))
@@ -16,8 +16,10 @@ def main():
 
     print('----- 2020年09月16日 -----')
     print(solution.binary_search([1, 2, 3, 46, 100], 100))
+    print('----- 2020年09月21日 -----')
+    print(solution.firstUniqChar('abaccdeff'))
 
-    print('==================== 基础 ====================')
+    print('======================================== 基础 ========================================')
     print('----- 2020年09月11日 -----')
     basic = Basic()
     testArr = [1, 8, 5, 2, 1, 5, 6, 3, 9, 7, 4]

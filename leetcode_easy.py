@@ -82,3 +82,17 @@ class Solution:
             elif(target > arr[mid]):
                 left = mid + 1
         return -1
+
+    # 剑指 Offer 50。
+    # 在字符串 s 中找出第一个只出现一次的字符。如果没有，返回一个单空格。 s 只包含小写字母。
+    def firstUniqChar(self, s: str) -> str:
+        # 利用哈希表
+        # 遍历字符串 s,使用哈希表统计”各字符数量是否 > 1”
+        # 再次遍历 s，在哈希表中找到为 true 的字符
+        dic = {}
+        for c in s:
+            dic[c] = not c in dic
+        for c in s:
+            if dic[c]:
+                return c
+        return ''
