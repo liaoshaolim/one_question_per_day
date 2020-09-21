@@ -20,6 +20,7 @@ def main():
     print(solution.firstUniqChar('abaccdeff'))
     print(solution.merge([1, 2, 3, 4, 5], [2, 5, 6]))
     print(solution.checkValidString('(){}[]'))
+    print(solution.reverse(123))
 
     print('======================================== 基础 ========================================')
     print('----- 2020年09月11日 -----')

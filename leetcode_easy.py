@@ -135,3 +135,17 @@ class Solution:
             elif not stack or dic[c] != stack.pop():
                 return False
         return True
+
+    # 7. 整数反转
+    # 注意溢出的情况
+    # 语法学习，return 的时候可以 if else
+    def reverse(self, x: int) -> int:
+        y = abs(x)
+        res = 0
+        boundary = 2 ** 31 - 1 if x > 0 else 2 ** 31
+        while y != 0:
+            res = res * 10 + y % 10
+            if res > boundary:
+                return 0
+            y //= 10
+        return res if x > 0 else -res
