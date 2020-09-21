@@ -18,6 +18,7 @@ def main():
     print(solution.binary_search([1, 2, 3, 46, 100], 100))
     print('----- 2020年09月21日 -----')
     print(solution.firstUniqChar('abaccdeff'))
+    print(solution.merge([1, 2, 3, 4, 5], [2, 5, 6]))
 
     print('======================================== 基础 ========================================')
     print('----- 2020年09月11日 -----')

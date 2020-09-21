@@ -96,3 +96,26 @@ class Solution:
             if dic[c]:
                 return c
         return ''
+
+    # 88. 合并两个有序数组
+    # 双指针思路
+    def merge(self, nums1, nums2):
+        i = 0
+        j = 0
+        result = []
+        nums1Len = len(nums1)
+        nums2Len = len(nums2)
+        while i < nums1Len and j < nums2Len:
+            if nums1[i] <= nums2[j]:
+                result.append(nums1[i])
+                i += 1
+            else:
+                result.append(nums2[j])
+                j += 1
+        while i < nums1Len:
+            result.append(nums1[i])
+            i += 1
+        while j < nums2Len:
+            result.append(nums2[j])
+            j += 1
+        return result
