@@ -16,6 +16,7 @@ def main():
 
     print('----- 2020年09月16日 -----')
     print(solution.binary_search([1, 2, 3, 46, 100], 100))
+
     print('----- 2020年09月21日 -----')
     print(solution.firstUniqChar('abaccdeff'))
     print(solution.merge([1, 2, 3, 4, 5], [2, 5, 6]))
@@ -35,6 +36,12 @@ def main():
     print('----- 2020年09月16日 -----')
     print(basic.binary_search_left([1, 2, 2, 2, 3], 0))
     print(basic.binary_search_right([1, 2, 2, 2, 3], 2))
+
+    print('----- 2020年09月22日 -----')
+    # for i in range(101):
+    print(basic.fib1(10))
+    print(basic.fib2(10))
+    print(basic.fib3(10))
 
 
 if __name__ == "__main__":

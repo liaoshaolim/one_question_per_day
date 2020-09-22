@@ -55,3 +55,42 @@ class Basic:
         if(right < 0 or arr[right] != target):
             return -1
         return right
+
+    # 斐波那契数列 0、1、1、2、3、5、8、13、21、34
+    # F(0) = 0，F(1) = 1,
+    # F(n) = F(n - 1) + F(n - 2)（n ≥ 3，n ∈ N*）
+    def fib1(self, n):
+        if n == 0:
+            return 0
+        if n == 1:
+            return 1
+        return self.fib1(n - 1) + self.fib1(n - 2)
+
+    # 带备忘录的做法
+    def fib2(self, n):
+        arr = [0] * (n + 1)  # 长度为 n + 1 元素全为 0 的数组
+        return self.helper(arr, n)
+
+    def helper(self, arr, n):
+        if n == 0:
+            return 0
+        if n == 1:
+            return 1
+        if arr[n] != 0:
+            return arr[n]
+        else:
+            arr[n] = self.helper(arr, n - 1) + self.helper(arr, n - 2)
+            return arr[n]
+
+    # dp 数组
+    def fib3(self, n):
+        if n == 0:
+            return 0
+        if n == 1:
+            return 1
+        dp = [0] * (n+1)
+        dp[1] = 1
+        for i in range(2, n + 1):
+            dp[i] = dp[i - 1] + dp[i - 2]
+        # dp[-1] 数组的最后一个元素
+        return dp[-1]
