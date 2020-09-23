@@ -217,6 +217,16 @@ class Solution:
 
             # 记入备忘录
             memo[n] = res if res != float('INF') else -1
-            print(memo)
             return memo[n]
         return dp(amount)
+
+    # 242. 有效的字母异位词
+    # 给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。
+    def isAnagram(self, s: str, t: str) -> bool:
+        dic1 = {}
+        dic2 = {}
+        for c in s:
+            dic1[c] = dic1.get(c, 0) + 1
+        for c in t:
+            dic2[c] = dic2.get(c, 0) + 1
+        return dic1 == dic2
