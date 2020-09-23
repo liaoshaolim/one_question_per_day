@@ -190,3 +190,33 @@ class Solution:
         for i in range(2, n + 1):
             dp[i] = dp[i - 1] + dp[i - 2]
         return dp[-1]
+
+    # 322. 零钱兑换 TODO：重新捋思路
+    # 给定不同面额的硬币 coins 和一个总金额 amount。编写一个函数来计算可以凑成总金额所需的最少的硬币个数。如果没有任何一种硬币组合能组成总金额，返回 -1。
+    def coinChange(self, coins, amount: int) -> int:
+        # 备忘录
+        memo = dict()
+
+        # 输入一个目标金额 n，返回凑出目标金额 n 的最少硬币数量。
+        def dp(n):
+            # 查备忘录，避免重复计算
+            if n in memo:
+                return memo[n]
+            # base case
+            if n == 0:
+                return 0
+            if n < 0:
+                return -1
+            res = float('INF')
+            for coin in coins:
+                subproblem = dp(n - coin)
+                if subproblem == -1:
+                    continue
+                # 1 + subproblem: 1 为 1、2、5 减去的那个情况
+                res = min(res, 1 + subproblem)
+
+            # 记入备忘录
+            memo[n] = res if res != float('INF') else -1
+            print(memo)
+            return memo[n]
+        return dp(amount)
