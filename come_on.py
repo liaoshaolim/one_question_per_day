@@ -1,5 +1,6 @@
 from leetcode_easy import Solution
 from basic import Basic
+from node import Node, LinkListUtil
 
 
 def main():
@@ -49,6 +50,25 @@ def main():
     print(basic.fib1(10))
     print(basic.fib2(10))
     print(basic.fib3(10))
+
+    print('----- 2020年09月24日 -----')
+    node1 = Node(1)
+    node2 = Node(2)
+    node3 = Node(3)
+    node4 = Node(4)
+    node5 = Node(5)
+
+    node1.next = node2
+    node2.next = node3
+    node3.next = node4
+    node4.next = node5
+    node5.next = None
+
+    util = LinkListUtil()
+    util.printAll(node1)
+    print(util.length(node1))
+    print(util.isHasCycle(node1))
+    util.printAll(util.reverse(node1))
 
 
 if __name__ == "__main__":
