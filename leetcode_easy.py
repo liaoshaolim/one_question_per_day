@@ -245,3 +245,13 @@ class Solution:
                 y //= 10  # 降位
             return res if x > 0 else -res
         return x == reverse(x)
+
+    # 1.两数之和
+    def two_sum(self, nums, target):
+        dic = {}
+        for i, n in enumerate(nums):
+            temp = target - n
+            if temp in dic:
+                return[dic[temp], i]
+            else:
+                dic[n] = i
