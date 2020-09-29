@@ -19,7 +19,7 @@ def main():
     print(solution.binary_search([1, 2, 3, 46, 100], 100))
 
     print('----- 2020年09月21日 -----')
-    print(solution.firstUniqChar('abaccdeff'))
+    print(solution.firstUniqChar('abaaccdeff'))
     print(solution.merge([1, 2, 3, 4, 5], [2, 5, 6]))
     print(solution.checkValidString('(){}[]'))
     print(solution.reverse(123))
@@ -32,6 +32,9 @@ def main():
     print('----- 2020年09月23日 -----')
     print(solution.coinChange([1, 2, 5], 11))
     print(solution.isAnagram('art', 'rat'))
+
+    print('----- 2020年09月29日 -----')
+    print(solution.isPalindrome(-121))
 
     print('======================================== 基础 ========================================')
     print('----- 2020年09月11日 -----')

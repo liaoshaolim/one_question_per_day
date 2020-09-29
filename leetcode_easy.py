@@ -230,3 +230,18 @@ class Solution:
         for c in t:
             dic2[c] = dic2.get(c, 0) + 1
         return dic1 == dic2
+
+    # 9. 回文数
+    # -121 也是返回 False
+    def isPalindrome(self, x: int) -> bool:
+        if x < 0:
+            return False
+
+        def reverse(x):
+            y = abs(x)
+            res = 0
+            while y != 0:
+                res = res * 10 + y % 10  # 取最后一位
+                y //= 10  # 降位
+            return res if x > 0 else -res
+        return x == reverse(x)
