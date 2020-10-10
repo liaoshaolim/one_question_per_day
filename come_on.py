@@ -75,6 +75,21 @@ def main():
     print(util.isHasCycle(head))
     util.printAll(util.reverse(head))
 
+    print('----- 2020年10月10日 -----')
+    arr1 = [
+        [1, 2, 3, 4],
+        [4, 5, 6],
+        [7, 8, 9],
+    ]
+    basic.scanBy45(arr1)
+
+    arr2 = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+    ]
+    basic.scanBy45(arr2)
+
 
 if __name__ == "__main__":
     main()

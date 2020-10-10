@@ -94,3 +94,27 @@ class Basic:
             dp[i] = dp[i - 1] + dp[i - 2]
         # dp[-1] 数组的最后一个元素
         return dp[-1]
+
+    # 45度遍历二维数组
+    def scanBy45(self, arr):
+        def isValid(arr):
+            ''' 合法性校验 '''
+            if len(arr) <= 0:
+                return False
+            else:
+                count = len(arr[0])
+                for item in arr:
+                    if len(item) != count:
+                        return False
+            return True
+
+        if isValid(arr) == False:
+            print('二维数组不合法')
+            return
+
+        for scanCount in range(len(arr) * 2 - 1):
+            for index1 in range(len(arr)):
+                index2 = scanCount - index1
+                if index2 >= 0 and index2 < len(arr):
+                    print(arr[index1][index2], end=' ')
+            print('')
