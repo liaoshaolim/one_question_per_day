@@ -223,6 +223,8 @@ class Solution:
 
     # 242. 有效的字母异位词
     # 给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。
+    # 思路1：两个字符串排序后比对 O(NlogN)
+    # 思路2：记录字符出现的个数 O(N)
     def isAnagram(self, s: str, t: str) -> bool:
         dic1 = {}
         dic2 = {}
