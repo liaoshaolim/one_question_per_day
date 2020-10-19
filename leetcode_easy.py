@@ -11,7 +11,12 @@ class Solution:
 
     def longestCommonPrefix(self, strs) -> str:
         result = ''
-        # zip函数作用：将列表解开成两个独立的参数，传入函数
+        # zip() 函数用于将可迭代的对象作为参数，将对象中对应的元素打包成一个个元组，然后返回由这些元组组成的列表。
+        # 如果各个迭代器的元素个数不一致，则返回列表长度与最短的对象相同，利用 * 号操作符，可以将元组解压为列表。
+        # print(*strs)
+        # flower flow flight
+        # print(strs)
+        # ['flower', 'flow', 'flight']
         new_list = list(zip(*strs))
 
         print("new_list 为：{}".format(new_list))
