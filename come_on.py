@@ -37,6 +37,9 @@ def main():
     print(solution.isPalindrome(-121))
     print(solution.two_sum([1, 2, 7, 10], 9))
 
+    print('----- 2020年10月19日 -----')
+    print(solution.maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3))
+
     print('======================================== 基础 ========================================')
     print('----- 2020年09月11日 -----')
     basic = Basic()
