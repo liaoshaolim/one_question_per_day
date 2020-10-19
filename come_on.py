@@ -1,4 +1,5 @@
 from leetcode_easy import Solution
+from leetcode_difficult import DifficultSolution
 from basic import Basic
 from node import Node, LinkListUtil
 
@@ -36,10 +37,6 @@ def main():
     print('----- 2020年09月29日 -----')
     print(solution.isPalindrome(-121))
     print(solution.two_sum([1, 2, 7, 10], 9))
-
-    print('----- 2020年10月19日 -----')
-    print(solution.maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3))
-    print(solution.romanToInt('MCMXCIV'))
 
     print('======================================== 基础 ========================================')
     print('----- 2020年09月11日 -----')
@@ -93,6 +90,11 @@ def main():
         [7, 8, 9],
     ]
     basic.scanBy45(arr2)
+
+    print('======================================== 困难 ========================================')
+    print('----- 2020年10月19日 -----')
+    difficultSolution = DifficultSolution()
+    print(difficultSolution.maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3))
 
 
 if __name__ == "__main__":
