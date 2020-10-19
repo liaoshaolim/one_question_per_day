@@ -275,3 +275,22 @@ class Solution:
             if i >= k - 1:
                 res.append(nums[window[0]])
         return res
+
+    # 13.罗马数字转整数
+    def romanToInt(self, s: str) -> int:
+        hashMap = {
+            'I': 1,
+            'V': 5,
+            'X': 10,
+            'L': 50,
+            'C': 100,
+            'D': 500,
+            'M': 1000
+        }
+        result = 0
+        for index in range(len(s) - 1):
+            if hashMap[s[index]] < hashMap[s[index + 1]]:
+                result -= hashMap[s[index]]
+            else:
+                result += hashMap[s[index]]
+        return result + hashMap[s[-1]]

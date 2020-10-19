@@ -39,6 +39,7 @@ def main():
 
     print('----- 2020年10月19日 -----')
     print(solution.maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3))
+    print(solution.romanToInt('MCMXCIV'))
 
     print('======================================== 基础 ========================================')
     print('----- 2020年09月11日 -----')
