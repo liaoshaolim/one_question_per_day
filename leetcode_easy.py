@@ -152,6 +152,7 @@ class Solution:
             res = res * 10 + y % 10
             if res > boundary:
                 return 0
+            # // 返回的是整数结果(可以理解为 / 的整数部分)
             y //= 10
         return res if x > 0 else -res
 
@@ -265,7 +266,6 @@ class Solution:
                 dic[n] = i
 
     # 13.罗马数字转整数
-
     def romanToInt(self, s: str) -> int:
         hashMap = {
             'I': 1,
@@ -278,8 +278,11 @@ class Solution:
         }
         result = 0
         for index in range(len(s) - 1):
+            # 左边代表的数小于右边代表的数 - 当前数
             if hashMap[s[index]] < hashMap[s[index + 1]]:
                 result -= hashMap[s[index]]
+            # 左边代表的数大于右边代表的数 + 当前数
             else:
                 result += hashMap[s[index]]
-        return result + hashMap[s[-1]]
+        # hashMap[s[-1]] 
+        return result + hashMap[s[-1]

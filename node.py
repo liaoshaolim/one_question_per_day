@@ -39,10 +39,7 @@ class LinkListUtil(object):
         return False
 
     def reverse(self, head):
-        # cur, pre = head, None
-        # while cur:
-        #     cur.next, pre, cur = pre, cur, cur.next
-        # return pre
+        ''' 翻转链表 '''
         cur = head
         newH = None
         while cur:
