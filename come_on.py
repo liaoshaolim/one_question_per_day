@@ -28,7 +28,7 @@ def main():
     print(solution.singleNumber([4, 1, 2, 1, 2]))
 
     print('----- 2020年09月22日 -----')
-    print(solution.numWays(7))
+    print(solution.numWays(5))
 
     print('----- 2020年09月23日 -----')
     print(solution.coinChange([1, 2, 5], 11))
@@ -37,6 +37,9 @@ def main():
     print('----- 2020年09月29日 -----')
     print(solution.isPalindrome(-121))
     print(solution.two_sum([1, 2, 7, 10], 9))
+
+    print('----- 2020年11月03日 -----')
+    print(solution.romanToInt('LVIII'))
 
     print('======================================== 基础 ========================================')
     print('----- 2020年09月11日 -----')

@@ -152,7 +152,6 @@ class Solution:
             res = res * 10 + y % 10
             if res > boundary:
                 return 0
-            # // 返回的是整数结果(可以理解为 / 的整数部分)
             y //= 10
         return res if x > 0 else -res
 
@@ -251,7 +250,7 @@ class Solution:
             res = 0
             while y != 0:
                 res = res * 10 + y % 10  # 取最后一位
-                y //= 10  # 降位
+                y //= 10  # 降位 // 返回的是整数结果(可以理解为 / 的整数部分)
             return res if x > 0 else -res
         return x == reverse(x)
 
@@ -266,6 +265,7 @@ class Solution:
                 dic[n] = i
 
     # 13.罗马数字转整数
+
     def romanToInt(self, s: str) -> int:
         hashMap = {
             'I': 1,
@@ -277,12 +277,13 @@ class Solution:
             'M': 1000
         }
         result = 0
+        # 这里 range(len(s) - 1) 是为了下面取下一位的时候不越界
         for index in range(len(s) - 1):
             # 左边代表的数小于右边代表的数 - 当前数
             if hashMap[s[index]] < hashMap[s[index + 1]]:
                 result -= hashMap[s[index]]
-            # 左边代表的数大于右边代表的数 + 当前数
+                # 左边代表的数大于右边代表的数 + 当前数
             else:
                 result += hashMap[s[index]]
-        # hashMap[s[-1]] 
-        return result + hashMap[s[-1]
+        # 因为上面 range(len(s) - 1)，所以要加上最后一位
+        return result + hashMap[s[-1]]
