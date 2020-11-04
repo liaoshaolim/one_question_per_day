@@ -16,7 +16,7 @@ class Basic:
         # 确定 key 的位置
         arr[i] = key
         self.quickSort(arr, left, i - 1)
-        self.quickSort(arr, i+1, right)
+        self.quickSort(arr, i + 1, right)
 
     def binary_search_left(self, arr, target):
         ''' 二分查找之左侧边界 '''
@@ -101,20 +101,23 @@ class Basic:
             ''' 合法性校验 '''
             if len(arr) <= 0:
                 return False
-            else:
-                count = len(arr[0])
-                for item in arr:
-                    if len(item) != count:
-                        return False
-            return True
 
         if isValid(arr) == False:
-            print('二维数组不合法')
+            print('数组为空')
             return
 
-        for scanCount in range(len(arr) * 2 - 1):
+        def getMaxArrLen(arr):
+            ''' 获取二维数组中最大长度的数组的长度 '''
+            result = len(arr[0])
+            for item in arr:
+                if len(item) > result:
+                    result = len(item)
+            return result
+
+        # 扫描次数为 len(arr) + getMaxArrLen(arr) - 1
+        for scanCount in range(len(arr) + getMaxArrLen(arr) - 1):
             for index1 in range(len(arr)):
                 index2 = scanCount - index1
-                if index2 >= 0 and index2 < len(arr):
+                if index2 >= 0 and index2 < len(arr[index1]):
                     print(arr[index1][index2], end=' ')
             print('')
