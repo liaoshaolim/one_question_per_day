@@ -287,3 +287,20 @@ class Solution:
                 result += hashMap[s[index]]
         # 因为上面 range(len(s) - 1)，所以要加上最后一位
         return result + hashMap[s[-1]]
+
+    # 3. 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
+    # DETAIL：滑动窗口思路
+    # left 每次滑动 1，right 滑动到最大无重位置
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        hashSet = set()
+        strLen = len(s)
+        right = 0
+        res = 0
+        for left in range(strLen):
+            while right < strLen and s[right] not in hashSet:
+                hashSet.add(s[right])
+                right += 1
+            if len(hashSet) > res:
+                res = len(hashSet)
+            hashSet.remove(s[left])
+        return res

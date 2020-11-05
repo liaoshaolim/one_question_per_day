@@ -41,6 +41,9 @@ def main():
     print('----- 2020年11月03日 -----')
     print(solution.romanToInt('LVIII'))
 
+    print('----- 2020年11月05日 -----')
+    print(solution.lengthOfLongestSubstring('abcabcbb'))
+
     print('======================================== 基础 ========================================')
     print('----- 2020年09月11日 -----')
     basic = Basic()
