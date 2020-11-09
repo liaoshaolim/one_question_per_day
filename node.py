@@ -4,6 +4,15 @@ class Node(object):
         self.next = next
 
 
+class TreeNode:
+    ''' 二叉树节点 '''
+
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
 class LinkListUtil(object):
     def isEmpty(self, head):
         ''' 链表是否为空 '''
