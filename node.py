@@ -35,6 +35,7 @@ class LinkListUtil(object):
             current = current.next
         print()
 
+    # 双指针
     # fast slow point
     def isHasCycle(self, head):
         ''' 链表中是否有环 '''
@@ -48,6 +49,7 @@ class LinkListUtil(object):
                 return True
         return False
 
+    # 双指针
     # fast slow point
     # 快指针是慢指针一倍的步幅，当快指针指向 None 时，慢指针刚好满足条件
     def middleNode(self, head):
@@ -59,6 +61,7 @@ class LinkListUtil(object):
             fast = fast.next.next
         return slow
 
+    # 双指针
     # fast slow point
     def removeNthFromEnd(self, head, n):
         ''' 19. 删除链表的倒数第 N 个节点 （给定的 n 保证是有效的。）'''

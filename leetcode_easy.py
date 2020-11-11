@@ -12,7 +12,7 @@ class Solution:
     # 输入: ["flower","flow","flight"]
     # 输出: "fl"
 
-    def longestCommonPrefix(self, strs) -> str:
+    def longestCommonPrefix(self, strs):
         result = ''
         # zip() 函数用于将可迭代的对象作为参数，将对象中对应的元素打包成一个个元组，然后返回由这些元组组成的列表。
         # 如果各个迭代器的元素个数不一致，则返回列表长度与最短的对象相同，利用 * 号操作符，可以将元组解压为列表。
@@ -53,7 +53,7 @@ class Solution:
         return result
 
     # 349.进阶，两个有序数组的交集
-    # 双指针解
+    # 双指针
     def intersection_sorted(self, nums1, nums2):
         result = []
         i = 0
@@ -72,6 +72,7 @@ class Solution:
         return result
 
     # 704
+    # 双指针
     # 给定一个 n 个元素有序的（升序）整型数组 nums 和一个目标值 target  ，写一个函数搜索 nums 中的 target，如果目标值存在返回下标，否则返回 -1。
     def binary_search(self, arr, target):
         ''' 二分查找 '''
@@ -93,7 +94,7 @@ class Solution:
 
     # 剑指 Offer 50。
     # 在字符串 s 中找出第一个只出现一次的字符。如果没有，返回一个单空格。 s 只包含小写字母。
-    def firstUniqChar(self, s: str) -> str:
+    def firstUniqChar(self, s: str):
         # 利用哈希表
         # 遍历字符串 s,使用哈希表统计”各字符数量是否 > 1”
         # 再次遍历 s，在哈希表中找到为 true 的字符
@@ -130,7 +131,7 @@ class Solution:
 
     # 20. 有效的括号
     # 栈 思路
-    def checkValidString(self, s: str) -> bool:
+    def checkValidString(self, s: str):
         stack = []
         # 字典的的巧妙赋值
         dic = {')': '(', ']': '[', '}': '{'}
@@ -147,7 +148,7 @@ class Solution:
     # 7. 整数反转
     # 注意溢出的情况
     # 语法学习，return 的时候可以 if else
-    def reverse(self, x: int) -> int:
+    def reverse(self, x: int):
         y = abs(x)
         res = 0
         boundary = 2 ** 31 - 1 if x > 0 else 2 ** 31
@@ -180,7 +181,7 @@ class Solution:
     # 任何数和 0 异或，结果仍为这个数
     # 相同的两个数异或为 0
     # 和同一个数连续异或两次，结果仍为这个数
-    def singleNumber(self, nums) -> int:
+    def singleNumber(self, nums):
         a = 0
         for i in nums:
             a = a ^ i
@@ -202,7 +203,7 @@ class Solution:
 
     # 322. 零钱兑换 TODO：重新捋思路
     # 给定不同面额的硬币 coins 和一个总金额 amount。编写一个函数来计算可以凑成总金额所需的最少的硬币个数。如果没有任何一种硬币组合能组成总金额，返回 -1。
-    def coinChange(self, coins, amount: int) -> int:
+    def coinChange(self, coins, amount: int):
         # 备忘录
         memo = dict()
 
@@ -233,7 +234,7 @@ class Solution:
     # 给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。
     # 思路1：两个字符串排序后比对 O(NlogN)
     # 思路2：记录字符出现的个数 O(N)
-    def isAnagram(self, s: str, t: str) -> bool:
+    def isAnagram(self, s: str, t: str):
         dic1 = {}
         dic2 = {}
         for c in s:
@@ -244,7 +245,7 @@ class Solution:
 
     # 9. 回文数
     # -121 也是返回 False
-    def isPalindrome(self, x: int) -> bool:
+    def isPalindrome(self, x: int):
         if x < 0:
             return False
 
@@ -268,8 +269,7 @@ class Solution:
                 dic[n] = i
 
     # 13.罗马数字转整数
-
-    def romanToInt(self, s: str) -> int:
+    def romanToInt(self, s: str):
         hashMap = {
             'I': 1,
             'V': 5,
@@ -294,7 +294,7 @@ class Solution:
     # 3. 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
     # DETAIL：滑动窗口思路
     # left 每次滑动 1，right 滑动到最大无重位置
-    def lengthOfLongestSubstring(self, s: str) -> int:
+    def lengthOfLongestSubstring(self, s: str):
         hashSet = set()
         strLen = len(s)
         right = 0
@@ -309,7 +309,7 @@ class Solution:
         return res
 
     # 100. 相同的树
-    def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
+    def isSameTree(self, p: TreeNode, q: TreeNode):
         # 如果两个二叉树都为空，则两个二叉树相同
         if not p and not q:
             return True
@@ -324,8 +324,8 @@ class Solution:
 
     # 101. 对称二叉树
     # 思路：树左侧跟树右侧是相等的数
-    def isSymmetric(self, root: TreeNode) -> bool:
-        def isSameTree(p: TreeNode, q: TreeNode) -> bool:
+    def isSymmetric(self, root: TreeNode):
+        def isSameTree(p: TreeNode, q: TreeNode):
             # 如果两个二叉树都为空，则两个二叉树相同
             if not p and not q:
                 return True
@@ -343,7 +343,7 @@ class Solution:
         return isSameTree(root.left, root.right)
 
     # 104. 二叉树的最大深度
-    def maxDepth(self, root: TreeNode) -> int:
+    def maxDepth(self, root: TreeNode):
         if root is None:
             return 0
         else:
