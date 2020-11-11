@@ -35,6 +35,7 @@ class LinkListUtil(object):
             current = current.next
         print()
 
+    # fast slow point
     def isHasCycle(self, head):
         ''' 链表中是否有环 '''
         slow = head
@@ -46,6 +47,17 @@ class LinkListUtil(object):
             if slow is fast:
                 return True
         return False
+
+    # fast slow point
+    # 快指针是慢指针一倍的步幅，当快指针指向 None 时，慢指针刚好满足条件
+    def middleNode(self, head):
+        ''' 876. 链表的中间结点 '''
+        slow = head
+        fast = head
+        while slow and fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+        return slow
 
     def reverse(self, head):
         ''' 翻转链表 '''
