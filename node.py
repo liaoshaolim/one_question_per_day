@@ -59,6 +59,26 @@ class LinkListUtil(object):
             fast = fast.next.next
         return slow
 
+    # fast slow point
+    def removeNthFromEnd(self, head, n):
+        ''' 19. 删除链表的倒数第 N 个节点 （给定的 n 保证是有效的。）'''
+        slow = head
+        fast = head
+        # 快指针前进 n 个节点
+        while n > 0:
+            fast = fast.next
+            n -= 1
+        # 快指针如果为 None 则代表 n 为链表长度，删除第一个节点即可
+        if fast == None:
+            return head.next
+        # 快慢指针同步向前，当快指针走到最后一个节点跳出循环
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next
+        # slow.next 就是倒数第 n 个节点，删除即可
+        slow.next = slow.next.next
+        return head
+
     def reverse(self, head):
         ''' 翻转链表 '''
         cur = head
