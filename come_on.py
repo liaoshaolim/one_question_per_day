@@ -44,6 +44,9 @@ def main():
     print('----- 2020年11月05日 -----')
     print(solution.lengthOfLongestSubstring('abcabcbb'))
 
+    print('----- 2020年12月17日 -----')
+    print(solution.maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
+
     print('======================================== 基础 ========================================')
     print('----- 2020年09月11日 -----')
     basic = Basic()

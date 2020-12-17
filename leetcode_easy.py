@@ -350,3 +350,16 @@ class Solution:
             left_height = self.maxDepth(root.left)
             right_height = self.maxDepth(root.right)
             return max(left_height, right_height) + 1
+
+    # 剑指 Offer 42. 连续子数组的最大和
+    # 输入: nums = [-2,1,-3,4,-1,2,1,-5,4]
+    # 输出: 6
+    # 解释: 连续子数组 [4,-1,2,1] 的和最大，为 6。
+    def maxSubArray(self, nums) -> int:
+        maxNum = nums[0]
+        for i in range(1, len(nums)):
+            pre_num = nums[i - 1]
+            if pre_num > 0:
+                nums[i] += pre_num
+            maxNum = max(maxNum, nums[i])
+        return maxNum
